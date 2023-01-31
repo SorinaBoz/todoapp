@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>To Dos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<div class="container">
+    <div class="col-md-6">
+        <form action="#" th:action="@{/createToDo}" th:object ="${todo}"
+              method="post">
+            <div class="form-group">
+                <!-- Add hidden form field to handle update -->
+                <input type="hidden" th:field="*{id}" />
+                <label for="description">Description</label>
+                <input class="form-control" type="text" th:field="*{description}" id="description"
+                       placeholder="Add a description">
+                <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+                <input class="form-control" type="date" th:field="*{deadline}" id="deadline"
+                       placeholder="Add a deadline">
+                <span th:if="${#fields.hasErrors('deadline')}" th:errors="*{deadline}"></span>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" th:checked="${complete} == true" th:field="*{complete}" id="complete" />
+                    Complete
+                </label>
+            </div>
+
+            <button class="btn btn-default" type="submit">Update</button>
+
+        </form>
+    </div>
+</div>
+</body>

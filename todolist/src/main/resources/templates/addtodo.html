@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>To Dos</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<form action="#" th:action="@{/createToDo}" th:object ="${todo}"
+      method="post">
+  <fieldset>
+    <input type="submit" id="submitButton" th:value="Save">
+    <table>
+      <thead>
+      <tr>
+        <th>Description</th>
+        <th>Deadline</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <input type="hidden" th:field="*{id}" />
+        <td><input th:field="*{description}" /></td>
+        <td><input type = "date" th:field="*{deadline}" /></td>
+      </tr>
+      </tbody>
+    </table>
+  </fieldset>
+</form>
