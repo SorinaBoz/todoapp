@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Books Library </title>
+  <title>ToDos </title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -9,7 +9,13 @@
         crossorigin="anonymous" />
 </head>
 <body>
-<table>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">ToDos</li>
+  </ol>
+</nav>
+<table class = "table">
   <thead>
   <tr>
     <th> Id </th>
@@ -34,4 +40,5 @@
   </tr>
   </tbody>
 </table>
+<a href = "/addtodo" class = "btn btn-primary btn-lg ml-3"> Add a todo</a>
 </body>

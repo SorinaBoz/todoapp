@@ -33,14 +33,14 @@ public class ToDoController {
     }
 
 
-//    @GetMapping( "/addtodo")
-//    public String addToDo(Model model) {
-//        model.addAttribute("todo", new ToDo());
-//        return "addtodo";
-//    }
+    @GetMapping( "/addtodo")
+    public String addToDo(Model model) {
+        model.addAttribute("todo", new ToDo());
+        return "addtodo";
+    }
     @PostMapping("/createToDo")
     public String createToDo(@ModelAttribute ToDo toDo, Model model) {
-        model.addAttribute("toDo", toDo);
+        model.addAttribute("todo", toDo);
         toDoService.addToDo(toDo);
         return "redirect:todos";
     }
@@ -51,16 +51,10 @@ public class ToDoController {
         model.addAttribute("todo", toDo);
         return "update";
     }
-//
-//    @GetMapping("/todo/{id}")
-//    public String updateToDo(@RequestBody ToDo toDo, @PathVariable ("id") int id) {
-//        toDoService.updateToDo(id, toDo);
-//        return "todos";
-//    }
 
     @GetMapping("/delete/{id}")
-    public String deleteToDo(@PathVariable (value = "id") int id) {
+    public String deleteToDo(@PathVariable (value = "id") int id, Model model) {
         toDoService.deleteToDo(id);
-        return "redirect:/";
+        return getAllToDos(model);
     }
 }

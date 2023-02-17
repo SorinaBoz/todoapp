@@ -1,11 +1,36 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index Page</title>
+    <style type="text/css">
+#todocontainer {
+	margin-top: 50px;
+}
+</style>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-<p>See the ToDos <a href="/todos">here</a></p>
-<p>Add a ToDo<a href="/addtodo">here</a></p>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Home</li>
+    </ol>
+</nav>
+<section id="todocontainer">
+    <h2 style="padding-top: 30px; padding-bottom: 20px;" class="text-center">Welcome to Todo Manager</h2>
+    <div class="d-flex justify-content-center">
+        <a href = "/todos" class = "btn btn-primary btn-lg mr-3"> See the todos</a>
+        <a href = "/addtodo" class = "btn btn-primary btn-lg ml-3"> Add a todo</a>
+
+    </div>
+
+</section>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
+
